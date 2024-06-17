@@ -1,0 +1,16 @@
+.InfoBox-Container {
+    background-color: #cf112d;
+    border-radius: 20px;
+    padding: 20px;
+    color:white;
+    box-shadow: 0px 0px 5px black;
+    overflow:hidden
+}
+
+span {
+    font-size: 20px;
+}
+
+p {
+    margin-top: 5px;
+}

@@ -1,0 +1,51 @@
+
+.Header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+    min-height: 65px; 
+    width: 100%;
+    background-color: #CF112D;
+    box-shadow: 0px -2px 10px;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    margin-left: 25px;
+}
+.search-contents{
+    position: relative;
+    flex:1;
+    margin-left: 50px;
+    max-width: 250px;
+    margin-right: 40px;
+}
+.courseSearch {
+    height: 20px;
+    width: 100%; 
+    padding: 10px 15px 10px 15px;
+    border: 1px solid;
+    border-radius: 20px;
+    border-color: gray;
+    outline: none;
+    font-size: 15px;
+}
+
+.info-circle {
+    display: inline-block;
+    width: 35px;
+    margin-left: auto;   
+    margin-right: 40px;   
+    fill: white;
+    filter: invert(100%);
+}
+
+.info-circle:hover {
+    cursor: pointer;
+}
+
+.popover-content {
+    margin: 15px 10px 10px 15px;
+}
