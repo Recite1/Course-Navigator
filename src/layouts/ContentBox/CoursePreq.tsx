@@ -52,9 +52,7 @@ function CoursePreq({selectedCourse}:{ selectedCourse: Course | undefined }){
                     <div key = {index} className = "subBox" onClick={() => handleSearch(item)}> 
                             <div className = "item-code" >{item.code}</div>
                             <Tooltip title = "click here to see the course on carleton's website" >
-                                <NoPadding_IconButton>
-                                    <a href = {item.link} target="_blank" className = "item-link"><div>{item.name}</div></a>
-                                </NoPadding_IconButton>
+                                <a href = {item.link} target="_blank" className = "item-link" onClick = {(e) =>e.stopPropagation()}><div>{item.name}</div></a>
                             </Tooltip>
                             <div className = "subBox-description">{item.description} </div>
                             <div> Credits: {String(item.credit)} </div>

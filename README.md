@@ -1,30 +1,62 @@
-# React + TypeScript + Vite
+# CourseNavigator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A tool for students at carleton to help schedule their future courses. All course data are scraped from [The official carleton website](https://calendar.carleton.ca/undergrad/courses/)
 
-Currently, two official plugins are available:
+### Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<details>
+<summary>Click to expand</summary>
 
-## Expanding the ESLint configuration
+![Main](./public/screenshots/Main.PNG)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Search results](./public/screenshots/SearchResults.PNG)
 
-- Configure the top-level `parserOptions` property like this:
+![Course rearch](./public/screenshots/CourseSearch.PNG)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
+![Popover](./public/screenshots/Popover.png)
+
+</details>
+
+## Setup
+This stack contains: React, Typescript, Flask, Python, MaterialUI, Postgresql
+
+Make sure to have the following installed:
+  - Node.js 
+  - npm (should come bundled with Node.js)
+  - Flask 
+
+In the root direcetory, run: `npm install` to install all node dependencies
+
+### Setting up virtual envionment for flask
+  CD into the CourseNavigator/backend directory and create a `.venv` file with `python3 -m venv .venv`
+  activate the virtual enviroment with `.venv/scripts/activate`
+  install all the python dependencies with `pip install -r requirements.txt`
+
+### Adding data and connecting to your database
+
+```python
+  # Navigate into your root directory
+  # Create a file called .env 
+  # Add your database URL, it will look like: DATABASE_URL = 'postgresql://<username>:<password>@<host>:<port>/<database>'
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  - Now cd into the CourseNavigator/backend directory and run Scraper.py
+  - Your database will now be populated with all the course data
+
+### Running the server locally
+To run the server make sure:
+  - `.env` file contains your database URL
+  - additionaly in the `.env` file add ` VITE_API_URL = 'http://127.0.0.1:1111'` and `FRONTEND_URL = 'http://localhost:5173'`
+  - The frontend and the backend are both running
+
+```python
+  #In the current terminal
+  #run:
+  npm run dev
+
+  #in a new terminal
+  #cd into CourseNavigator/backend
+  python server.py
+
+  # You can now view the carleton course tool with: http://localhost:5173
+```
