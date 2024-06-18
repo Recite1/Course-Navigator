@@ -38,6 +38,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Install Azure CLI
+      shell: pwsh
       run: |
         Install-Module -Name Az
 
