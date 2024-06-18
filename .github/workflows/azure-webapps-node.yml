@@ -39,8 +39,7 @@ jobs:
 
     - name: Install Azure CLI
       run: |
-        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-        az version --output table
+        Install-Module -Name Az
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -73,12 +72,6 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    - name: Update Az modules
-      shell: pwsh
-      run: |
-        Update-PSResource Az -WhatIf
-        Update-PSResource Az
-        
     - name: Download artifact from build job
       uses: actions/download-artifact@v3
       with:
