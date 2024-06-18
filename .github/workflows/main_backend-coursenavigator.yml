@@ -31,7 +31,15 @@ jobs:
           cd backend
           python -m venv venv
           source venv/bin/activate
-      
+
+      - name: Create .env file
+        run: |
+          echo "DATABASE_URL=${{DATABASE_URL}}" > .env
+          echo "FRONTEND_URL=${{FRONTEND_URL}}" >> .env
+          
+      - name: Show .env file contents
+        run: cat .env
+        
       - name: Install dependencies
         run: |
           cd backend
