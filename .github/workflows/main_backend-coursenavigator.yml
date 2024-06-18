@@ -13,7 +13,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+    defaults:
+      run:
+        working-directory: backend
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL}}
       FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
@@ -28,7 +30,6 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          cd backend
           python -m venv venv
           source venv/bin/activate
 
@@ -41,9 +42,7 @@ jobs:
         run: cat .env
         
       - name: Install dependencies
-        run: |
-          cd backend
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
