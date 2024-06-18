@@ -37,6 +37,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Install Azure CLI
+      run: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+        az version --output table
+
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
