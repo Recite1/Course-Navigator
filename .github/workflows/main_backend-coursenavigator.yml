@@ -34,8 +34,8 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo "DATABASE_URL=${{DATABASE_URL}}" > .env
-          echo "FRONTEND_URL=${{FRONTEND_URL}}" >> .env
+          echo "DATABASE_URL=${{secrets.DATABASE_URL}}" > .env
+          echo "FRONTEND_URL=${{secrets.DATABASE_URL}}" >> .env
           
       - name: Show .env file contents
         run: cat .env
