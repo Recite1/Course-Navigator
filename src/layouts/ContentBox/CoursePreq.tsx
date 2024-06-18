@@ -2,15 +2,7 @@ import './ContentBox.css'
 import {Course} from '../../Interfaces'
 import {useEffect , useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-import {Tooltip, IconButton } from '@mui/material'
-import { styled } from '@mui/system'
-
-const NoPadding_IconButton = styled(IconButton)({
-    padding: '0px',
-    '&:hover': {
-      backgroundColor: 'transparent', // Override hover background color
-    },
-});
+import {Tooltip } from '@mui/material'
 
 function CoursePreq({selectedCourse}:{ selectedCourse: Course | undefined }){
     const navigate = useNavigate();
