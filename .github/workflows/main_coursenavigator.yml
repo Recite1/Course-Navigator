@@ -15,10 +15,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL}}
-      BACKEND_URL: ${{ secrets.BACKEND_URL }}
-
     steps:
       - uses: actions/checkout@v4
 
@@ -73,5 +69,5 @@ jobs:
         with:
           app-name: 'CourseNavigator'
           slot-name: 'Production'
-          package: .
+          package: ./dist
           
