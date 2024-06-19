@@ -81,5 +81,5 @@ jobs:
         with:
           app-name: 'Backend-CourseNavigator'
           slot-name: 'Production'
-          package: ./backend
+          package: .
           
