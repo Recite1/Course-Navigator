@@ -10,7 +10,7 @@ on:
       - main
     paths:
       - 'courseNavigator/backend/**'
-      - '.git/**'
+      - '.github/**'
   workflow_dispatch:
 
 jobs:
