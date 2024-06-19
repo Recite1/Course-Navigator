@@ -16,11 +16,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL}}
-      FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
-      
+    
     steps:
       - uses: actions/checkout@v4
 
@@ -34,14 +30,6 @@ jobs:
           cd backend
           python -m venv venv
           source venv/bin/activate
-
-      - name: Create .env file
-        run: |
-          echo "DATABASE_URL=${{secrets.DATABASE_URL}}" > .env
-          echo "FRONTEND_URL=${{secrets.DATABASE_URL}}" >> .env
-          
-      - name: Show .env file contents
-        run: cat .env
         
       - name: Install dependencies
         run: |
